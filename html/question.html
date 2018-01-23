@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Question</title>
+    <script src="../javascript/question.js"></script>
+</head>
+<body>
+    <div id="questionHolder" style="margin-left:10%; overflow:scroll; height:300px; ">
+      
+    </div>
+    <button type="button" class="btn btn-primary" onclick="addAQuestion()">Add A Question</button>
+    <form action="">
+        <style>
+            .slider {
+                -webkit-appearance: none;
+                width: 40%;
+                height: 15px;
+                border-radius: 5px;   
+                background: #d3d3d3;
+                outline: none;
+                opacity: 0.7;
+                -webkit-transition: .2s;
+                transition: opacity .2s;
+            }
+            
+            .slider::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 25px;
+                height: 25px;
+                border-radius: 50%; 
+                background: #4CAF50;
+                cursor: pointer;
+            }
+            
+            .slider::-moz-range-thumb {
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                background: #4CAF50;
+                cursor: pointer;
+            }
+        </style>
+        
+        <select id="questionType">
+            <option value="multiple">Multi</option>
+            <option value="rating">Rating (1-10)</option>
+            <option value="short">Short Answer</option>
+            <option value="scale">Scale Of (1-10)</option>
+          </select>
+    </form>
+</body>
+</html>
