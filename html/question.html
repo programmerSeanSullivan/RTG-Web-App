@@ -1,56 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Question</title>
     <script src="../javascript/question.js"></script>
+    <script src="../javascript/contact.js"></script>
+    <script src="../javascript/comment.js"></script>
+    <script src="../javascript/heading.js"></script>
+    <script src="../javascript/direction.js"></script>
+    <script src="../javascript/section.js"></script>
 </head>
+
 <body>
-    <div id="questionHolder" style="margin-left:10%; overflow:scroll; height:300px; ">
-      
+    
+    <div style="margin-left:7%;">
+        <div id="questionHolder" style="margin-left:10%; overflow:scroll; height:300px; ">
+
+        </div>
+
+        <form action="">
+            <style>
+                td,
+                th {
+                    padding: 3px;
+                }
+
+                .slider {
+                    -webkit-appearance: none;
+                    width: 40%;
+                    height: 15px;
+                    border-radius: 5px;
+                    background: #d3d3d3;
+                    outline: none;
+                    opacity: 0.7;
+                    -webkit-transition: .2s;
+                    transition: opacity .2s;
+                }
+
+                .slider::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+                    appearance: none;
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                    background: #4CAF50;
+                    cursor: pointer;
+                }
+
+                .slider::-moz-range-thumb {
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                    background: #4CAF50;
+                    cursor: pointer;
+                }
+            </style>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            <select id="headerType">
+                                <option selected="selected" value="options">Heading Type</option>
+                                <option value="titleH">Title</option>
+                                <option value="questionH">Question</option>
+                                <option value="answerH">Answer</option>
+                                <option value="customH">Custom</option>
+                            </select>
+                        </th>
+                        <th>
+                            <select id="directionsType">
+                                <option selected="selected" value="options">Directions Type</option>
+                                <option value="genericD">Generic</option>
+                                <option value="questionD">Question</option>
+                                <option value="answerD">Answer</option>
+                                <option value="customD">Custom</option>
+                            </select>
+                        </th>
+                        <th>
+                            <select id="questionType">
+                                <option selected="selected" value="options">Question Type</option>
+                                <option value="multiple">Multi</option>
+                                <option value="rating">Rating (1-10)</option>
+                                <option value="short">Short Answer</option>
+                                <option value="scale">Scale Of (1-10)</option>
+                            </select>
+                        </th>
+                        <th>
+                            <select id="contactType">
+                                <option selected="selected" value="options">Contact Type</option>
+                                <option value="admin">Admin Info</option>
+                                <option value="email">Email</option>
+                                <option value="nameFull">Name Full</option>
+                                <option value="nameFirst">First Name</option>
+                                <option value="nameMiddle">Middle Name</option>
+                                <option value="initialMiddle">Middle Initial</option>
+                                <option value="nameLast">Last Name</option>
+                                <option value="address">Address</option>
+                                <option value="number">Phone Number</option>
+                                <option value="employerNumber">Employee Number</option>
+                                <option value="fullContact">Generic Full Contact</option>
+                            </select>
+                        </th>
+                        <th>
+                            <select id="commentType">
+                                <option selected="selected" value="options">Comment Type</option>
+                                <option value="unlimitedComment">Unlimited</option>
+                                <option value="largeComment">Large</option>
+                                <option value="mediumComment">Medium</option>
+                                <option value="smallComment">Small</option>
+                            </select>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <button type="button" class="btn btn-primary" onclick="addAHeading()">Add A Heading</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary" onclick="addDirections()">Add Directions</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary" onclick="addAQuestion()">Add A Question</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary" onclick="addAContactForm()">Add A Contact Form</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary" onclick="addACommentSection()">Add A Comment Section</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button type="button" class="btn btn-primary" onclick="addEmAll()">Add All Selected Options</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary" onclick="addEmAll()">Preview Final Form</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+           
+
+        </form>
     </div>
-    <button type="button" class="btn btn-primary" onclick="addAQuestion()">Add A Question</button>
-    <form action="">
-        <style>
-            .slider {
-                -webkit-appearance: none;
-                width: 40%;
-                height: 15px;
-                border-radius: 5px;   
-                background: #d3d3d3;
-                outline: none;
-                opacity: 0.7;
-                -webkit-transition: .2s;
-                transition: opacity .2s;
-            }
-            
-            .slider::-webkit-slider-thumb {
-                -webkit-appearance: none;
-                appearance: none;
-                width: 25px;
-                height: 25px;
-                border-radius: 50%; 
-                background: #4CAF50;
-                cursor: pointer;
-            }
-            
-            .slider::-moz-range-thumb {
-                width: 25px;
-                height: 25px;
-                border-radius: 50%;
-                background: #4CAF50;
-                cursor: pointer;
-            }
-        </style>
-        
-        <select id="questionType">
-            <option value="multiple">Multi</option>
-            <option value="rating">Rating (1-10)</option>
-            <option value="short">Short Answer</option>
-            <option value="scale">Scale Of (1-10)</option>
-          </select>
-    </form>
 </body>
+
 </html>
