@@ -10,25 +10,94 @@
 
 <body>
     <center>
-        <div style="width:80%; margin-left:10%; ">
+        <div style="width:80%; margin-left:2.7%; margin-bottom:3%; ">
             <div style="padding: 2.1px;">
-                <table>
-                    <thead>
-                        <th>
-                            Pick What to Create
-                        </th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                               <a href="../php/survey.php"> <button  class="btn btn-primary">Survey</button></a>
-                            </td>
-                            <td>
-                                    <a href="../php/review.php"><button class="btn btn-primary">Review</button></a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                    <table>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <select id="headerType">
+                                            <option selected="selected" value="options">Heading Type</option>
+                                            <option value="titleH">Title</option>
+                                            <option value="questionH">Question</option>
+                                            <option value="answerH">Answer</option>
+                                            <option value="customH">Custom</option>
+                                        </select>
+                                    </th>
+                                    <th>
+                                        <select id="directionsType">
+                                            <option selected="selected" value="options">Directions Type</option>
+                                            <option value="genericD">Generic</option>
+                                            <option value="questionD">Question</option>
+                                            <option value="answerD">Answer</option>
+                                            <option value="customD">Custom</option>
+                                        </select>
+                                    </th>
+                                    <th>
+                                        <select id="questionType">
+                                            <option selected="selected" value="options">Question Type</option>
+                                            <option value="multiple">Multi</option>
+                                            <option value="rating">Rating (1-10)</option>
+                                            <option value="short">Short Answer</option>
+                                            <option value="scale">Scale Of (1-10)</option>
+                                        </select>
+                                    </th>
+                                    <th>
+                                        <select id="contactType">
+                                            <option selected="selected" value="options">Contact Type</option>
+                                            <option value="admin">Admin Info</option>
+                                            <option value="email">Email</option>
+                                            <option value="nameFull">Name Full</option>
+                                            <option value="nameFirst">First Name</option>
+                                            <option value="nameMiddle">Middle Name</option>
+                                            <option value="initialMiddle">Middle Initial</option>
+                                            <option value="nameLast">Last Name</option>
+                                            <option value="address">Address</option>
+                                            <option value="number">Phone Number</option>
+                                            <option value="employerNumber">Employee Number</option>
+                                            <option value="fullContact">Generic Full Contact</option>
+                                        </select>
+                                    </th>
+                                    <th>
+                                        <select id="commentType">
+                                            <option selected="selected" value="options">Comment Type</option>
+                                            <option value="unlimitedComment">Unlimited</option>
+                                            <option value="largeComment">Large</option>
+                                            <option value="mediumComment">Medium</option>
+                                            <option value="smallComment">Small</option>
+                                        </select>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn btn-primary" onclick="addAHeading()">Add A Heading</button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary" onclick="addDirections()">Add Directions</button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary" onclick="addAQuestion()">Add A Question</button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary" onclick="addAContactForm()">Add A Contact Form</button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary" onclick="addACommentSection()">Add A Comment Section</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn btn-primary" onclick="addEmAll()">Add All Selected Options</button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary" onclick="addEmAll()">Preview Final Form</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                       
             </div>
         </div>
     </center>

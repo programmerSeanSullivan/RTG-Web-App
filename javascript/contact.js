@@ -66,7 +66,7 @@ function addAContactForm() {
             break;
         case option[8]:
             s = "<h2>Employee Number</h2>";
-            s += "<input type=\"number\" min=\"1\" max=\"15\" default=\"5\">";
+            s += "<input type=\"number\" name=\"empolyeeNum\" min=\"1\" max=\"15\" default=\"5\">";
             s += "<br>Required?<input type=\"radio\" >";
             break;
         case option[9]:
@@ -98,8 +98,8 @@ function addAContactForm() {
             break;
         case option[10]:
             s = "<h2>Admin Contact Info</h2>";
-            s += "Email:<input type=\"text\">";
-            s += "Call:<input type=\"text\">";
+            s += "Email:<input name=\"adminContactE\" type=\"text\">";
+            s += "Call:<input  name=\"adminContactC\"  type=\"text\">";
             break;
         default:
             alert(errorMessage);
