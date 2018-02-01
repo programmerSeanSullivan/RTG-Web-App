@@ -71,12 +71,15 @@ const smallCommentTag = "<textarea maxlenth=\"400\"></textarea>";
 
 
 function updateDiv() {
-    var formObjects = $('#questionHolder').serializeArray();
+   
+    var formObjects = $("questionHolder").serializeArray();
     /*
 This is where you will store your new forms
 */
     var divToModify = document.getElementById("previewForm").innerHTML;
-    for (let index = 0; index < formObjects.length; index++) {
+   document.getElementById("previewForm").innerHTML += "<p>hello</p>";
+    var index= {num:0};
+    for ( index.num = 0; index < formObjects.length; index.num++) {
         divToModify += tagGenerator(index, formObjects);
 
     }
@@ -92,7 +95,7 @@ This is where you will store your new forms
 
 function tagGenerator(index, arr) {
     var tag = "";
-    switch (arr[index].name) {
+    switch (arr[index.num].name) {
         /*
         Regex cases for direction tags
         */
@@ -218,7 +221,7 @@ function tagGenerator(index, arr) {
 
 function requirementCheckerComment(index, arr, tag) {
     var count = 0;
-    for (count = 0; count <= 2; i++ , index++) {
+    for (count = 0; count <= 2; i++ , index.num++) {
         /*
             Step 1: create the tag
             Step 2: set the pre-set requirements
@@ -231,7 +234,7 @@ function requirementCheckerComment(index, arr, tag) {
 }
 function requirementCheckerHeader(index, arr, tag) {
     var count = 0;
-    for (count = 0; count <= 2; i++ , index++) {
+    for (count = 0; count <= 2; i++ , index.num++) {
         /*
             Step 1: create the tag
             Step 2: set the pre-set requirements
@@ -244,7 +247,7 @@ function requirementCheckerHeader(index, arr, tag) {
 }
 function requirementCheckerDirections(index, arr, tag) {
     var count = 0;
-    for (count = 0; count <= 2; i++ , index++) {
+    for (count = 0; count <= 2; i++ , index.num++) {
         /*
             Step 1: create the tag
             Step 2: set the pre-set requirements
@@ -257,7 +260,7 @@ function requirementCheckerDirections(index, arr, tag) {
 }
 function requirementCheckerQuestions(index, arr, tag) {
     var count = 0;
-    for (count = 0; count <= 2; i++ , index++) {
+    for (count = 0; count <= 2; i++ , index.num++) {
         /*
             Step 1: create the tag
             Step 2: set the pre-set requirements
@@ -270,7 +273,7 @@ function requirementCheckerQuestions(index, arr, tag) {
 }
 function requirementCheckerContact(index, arr, tag) {
     var count = 0;
-    for (count = 0; count <= 2; i++ , index++) {
+    for (count = 0; count <= 2; i++ , index.num++) {
         /*
             Step 1: create the tag
             Step 2: set the pre-set requirements
@@ -283,7 +286,7 @@ function requirementCheckerContact(index, arr, tag) {
 }
 function requirementCheckerGenericContact(index, arr, tag) {
     var count = 0;
-    for (count = 0; count <= 2; i++ , index++) {
+    for (count = 0; count <= 2; i++ , index.num++) {
         /*
             Step 1: create the tag
             Step 2: set the pre-set requirements
@@ -296,7 +299,7 @@ function requirementCheckerGenericContact(index, arr, tag) {
 }
 function requirementCheckerAdminInfo(index, arr, tag) {
     var count = 0;
-    for (count = 0; count <= 2; i++ , index++) {
+    for (count = 0; count <= 2; i++ , index.num++) {
         /*
             Step 1: create the tag
             Step 2: set the pre-set requirements
@@ -309,7 +312,7 @@ function requirementCheckerAdminInfo(index, arr, tag) {
 }
 function requirementCheckerEmployeeNumber(index, arr, tag) {
     var count = 0;
-    for (count = 0; count <= 2; i++ , index++) {
+    for (count = 0; count <= 2; i++ , index.num++) {
         /*
             Step 1: create the tag
             Step 2: set the pre-set requirements

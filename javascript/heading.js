@@ -9,22 +9,22 @@ function addAHeading() {
     switch (usersStringValue) {
         case option[0]:
             s = "<h1>Title Heading</h1>";
-            s += "Title Text:<input type=\"text\" name=\"TitlePrompt" + titleCount + "\" value=\"Title Heading\">";
+            s += "Title Text:<input type=\"text\" name=\"headerTitle" + titleCount + "\" value=\"Title Heading\">";
             s += "<br><u>Underlined</u><input type=\"radio\" name=\"titleHU" + titleCount + "\"><br>NOT Underlined<input type=\"radio\" name=\"titleHU" + titleCount + "\">";
             break;
         case option[1]:
             s = "<h2>Question Heading</h2>";
-            s += "Title Text:<input type=\"text\" id=\"TitlePrompt" + titleCount + "\" value=\"Question Heading\">";
+            s += "Title Text:<input type=\"text\" name=\"questionTitle" + titleCount + "\" value=\"Question Heading\">";
             s += "<br><u>Underlined</u><input type=\"radio\" name=\"questionHU" + titleCount + "\"><br>NOT Underlined<input type=\"radio\" name=\"questionHU" + titleCount + "\">";
             break;
         case option[2]:
             s = "<h3>Answer Heading</h3>";
-            s += "Title Text:<input type=\"text\" id=\"TitlePrompt" + titleCount + "\" value=\"Answer Heading\">";
+            s += "Title Text:<input type=\"text\" name=\"answerTitle" + titleCount + "\" value=\"Answer Heading\">";
             s += "<br><u>Underlined</u><input type=\"radio\" name=\"subHU" + titleCount + "\"><br>NOT Underlined<input type=\"radio\" name=\"subHU" + titleCount + "\">";
             break;
         case option[3]:
             s = "<h4>Sub Heading</h4>";
-            s += "Title Text:<input type=\"text\" id=\"TitlePrompt" + titleCount + "\" value=\"Sub Heading\">";
+            s += "Title Text:<input type=\"text\" name=\"subHeaderTitle" + titleCount + "\" value=\"Sub Heading\">";
             s += "<br><u>Underlined</u><input type=\"radio\" name=\"customHU" + titleCount + "\"><br>NOT Underlined<input type=\"radio\" name=\"customHU" + titleCount + "\">";
             break;
         default:

@@ -11,22 +11,22 @@ function addAQuestion() {
     switch (usersStringValue) {
         case option[0]:
             s = "<h2>Short Answer</h2>";
-            s += "<form onclick=\"updatePage()\" method = \"post\">Question:<br><input type=\"text\" name=\"shortAnswer\" value=\"Question\"><br><br><input name=\"shortAnswer" + questionCount + "\" type=\"submit\" value=\"Submit\"></form>";
+            s += "Question:<br><input type=\"text\" name=\"shortAnswerQuestions\" value=\"Question\"><br><br>";
             break;
         case option[1]:
-            s = "<div id=\"answerTarget\"><h2>Multiple Choice</h2>";
-            s += "<input type=\"number\" min = \"2\" max = \"10\" name=\"quantity\" value=\"2\" id=\"numOfA\"> ";
+            s = "<div id=\"answerTarget\" name=\"multiQuestions\"><h2>Multiple Choice</h2>";
+            s += "<input type=\"number\" min = \"2\" max = \"10\" name=\"shortAnswerQuestions\" value=\"2\" id=\"numOfA\"> ";
             s += "<br>Question:<br><input name=\"multi" + questionCount + "\" type=\"text\"  value=\"Question\">";
             s += "<button onclick=\"addAnAnswerForMulti()\">Add Answers</button><br><br></div><br>";
             break;
         case option[2]:
             s = "<h2>Pick the Max Rating Value:</h2>";
-            s += "Label:<br><input id=\"rating" + questionCount + "\" type=\"text\" name=\"firstname\" value=\"Rating Label\"><br>";
+            s += "Label:<br><input name=\"ratingQuestions" + questionCount + "\" type=\"text\" name=\"firstname\" value=\"Rating Label\"><br>";
             s += "<div class=\"slidecontainer\"><input id=\"question" + questionCount + "\" type=\"range\" min=\"5\" max=\"100\" value=\"50\" class=\"slider\" id=\"myRange\"></div>";
             break;
         case option[3]:
             s = "<h2>Pick the Max Scale Value:</h2>";
-            s += "Label:<br><inputM id=\"scale" + questionCount + "\" type=\"text\" name=\"firstname\" value=\"Scale Label\"><br>";
+            s += "Label:<br><inputM name=\"scaleQuestions" + questionCount + "\" type=\"text\" name=\"firstname\" value=\"Scale Label\"><br>";
             s += "<div class=\"slidecontainer\"><input type=\"range\" min=\"5\" max=\"10\" value=\"5\" class=\"slider\" id=\"myRange" + questionCount + "\"></div>";
             break;
         default:

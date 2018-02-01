@@ -10,22 +10,22 @@ function addACommentSection() {
         case option[0]:
             s = "<h2>Unlimited Comment</h2>";
             s += "<p>This comment will allow for unlimited chars.</p>";
-            s += "Prompt for Comment:<input type=\"text\" name=\"CommentPromptU"+commentCount+"\" value=\"Please leave a comment.\">";
+            s += "Prompt for Comment:<input type=\"text\" name=\"unlimitedComment"+commentCount+"\" value=\"Please leave a comment.\">";
             break;
         case option[1]:
             s = "<h2>Large Comment</h2>";
             s += "<p>This comment will allow for 5,000 chars.</p>";
-            s += "Prompt for Comment:<input type=\"text\" name=\"CommentPromptL"+commentCount+"\" value=\"Please leave a comment.\">";
+            s += "Prompt for Comment:<input type=\"text\" name=\"largeComment"+commentCount+"\" value=\"Please leave a comment.\">";
             break;
         case option[2]:
             s = "<h2>Medium Comment</h2>";
             s +=  "<p>This comment will allow for 1,000 chars.</p>";
-            s += "Prompt for Comment:<input type=\"text\" name=\"CommentPromptM"+commentCount+"\" value=\"Please leave a comment.\">";
+            s += "Prompt for Comment:<input type=\"text\" name=\"mediumComment"+commentCount+"\" value=\"Please leave a comment.\">";
             break;
         case option[3]:
             s = "<h2>Small Comment</h2>";
             s +="<p>This comment will allow for 400 chars.</p>";
-            s += "Prompt for Comment:<input type=\"text\" name=\"CommentPromptS"+commentCount+"\" value=\"Please leave a comment.\">";
+            s += "Prompt for Comment:<input type=\"text\" name=\"smallComment"+commentCount+"\" value=\"Please leave a comment.\">";
             break;
         default:
             alert(errorMessage);
