@@ -71,17 +71,21 @@ const smallCommentTag = "<textarea maxlenth=\"400\"></textarea>";
 
 
 function updateDiv() {
-   
-    var formObjects = $("questionHolder").serializeArray();
+
+    var formObjects = $("form").serializeArray();
+    console.log(formObjects);
     /*
 This is where you will store your new forms
 */
     var divToModify = document.getElementById("previewForm").innerHTML;
-   document.getElementById("previewForm").innerHTML += "<p>hello</p>";
-    var index= {num:0};
-    for ( index.num = 0; index < formObjects.length; index.num++) {
-        divToModify += tagGenerator(index, formObjects);
-
+    console.log(formObjects.length);
+    //document.getElementById("previewForm").innerHTML += "<p>hello</p>";
+    var index = { num: 0 };
+    console.log(index);
+    for (index.num = 0; index.num < formObjects.length; index.num++) {
+        console.log(index.num);
+      document.getElementById("previewForm").innerHTML  +=tagGenerator(index, formObjects);
+// 
     }
 
 
@@ -89,11 +93,12 @@ This is where you will store your new forms
      * Take this array and begin to see which forms were generated
      */
 
-    document.getElementById("previewForm").innerHTML = divToModify;
+    //  document.getElementById("previewForm").innerHTML = divToModify;
 
 }
 
 function tagGenerator(index, arr) {
+    console.log(arr[index.num].name);
     var tag = "";
     switch (arr[index.num].name) {
         /*
@@ -112,7 +117,8 @@ function tagGenerator(index, arr) {
             if (tag.length === 0 || !tag.trim()) {
                 tag = smallCommentTag;
             }
-            requirementCheckerDirections(index, arr, tag);
+            return tag;
+            // tag = requirementCheckerDirections(index, arr, tag);
             break;
         /*
         Regex cases for contact tags
@@ -148,17 +154,20 @@ function tagGenerator(index, arr) {
         case phoneNumberNameRegEx:
             if (tag.length === 0 || !tag.trim())
                 tag = phoneNumberTag;
-            requirementCheckerContact(index, arr, tag);
+            return tag;
+            //tag = requirementCheckerContact(index, arr, tag);
             break;
         case employeeNumberNameRegEx:
             if (tag.length === 0 || !tag.trim())
                 tag = employeeNumberTag;
-            tag = requirementCheckerEmployeeNumber(index, arr, tag);
+            return tag;
+            //  tag = requirementCheckerEmployeeNumber(index, arr, tag);
             break;
         case genericFullContactNameRegEx:
             if (tag.length === 0 || !tag.trim())
                 tag = genericFullContactTag;
-            tag = requirementCheckerGenericContact(index, arr, tag);
+                return tag;
+                // tag = requirementCheckerGenericContact(index, arr, tag);
             break
 
         /*
@@ -177,7 +186,8 @@ function tagGenerator(index, arr) {
             if (tag.length === 0 || !tag.trim()) {
                 tag = scaleTag;
             }
-            tag = requirementCheckerQuestions(index, arr, tag);
+            return tag;
+            //tag = requirementCheckerQuestions(index, arr, tag);
             break;
         /*
         Regex cases for header tag
@@ -195,7 +205,8 @@ function tagGenerator(index, arr) {
             if (tag.length === 0 || !tag.trim()) {
                 tag = subHeaderTitleTag;
             }
-            tag = requirementCheckerHeader(index, arr, tag);
+            return tag;
+           // tag = requirementCheckerHeader(index, arr, tag);
             break;
         /*
          Regex cases for directions tag
@@ -213,7 +224,8 @@ function tagGenerator(index, arr) {
             if (tag.length === 0 || !tag.trim()) {
                 tag = customDirectionsTag;
             }
-            tag = requirementCheckerDirections(index, arr, tag);
+            return tag;
+            //tag = requirementCheckerDirections(index, arr, tag);
             break;
     }
     return tag;
